@@ -1,0 +1,12 @@
+version: 3
+
+tasks:
+  plugin:build:
+    dir: ./plugin
+    cmds:
+      - tinygo build -opt=2 -o plugin.wasm -target wasi main.go
+
+  runtime:run:
+    dir: ./runtime
+    cmds:
+      - go run .
